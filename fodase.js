@@ -1,1 +1,3 @@
-console.log("mudança 2")
+function showalert(){
+    alert('fodase')
+}

@@ -1,16 +1,15 @@
 function submit(){
     var now = new Date();
-    let date = document.getElementById("date").value;
-    let month = document.getElementById("month").value;
-    let year = document.getElementById("year").value;
+    let borndate = document.getElementById("date").value
+    var born = new Date(borndate)
     
-    var age = now.getFullYear() - year
+    var age = now.getFullYear() - born.getFullYear()
 
-    if (month > (now.getMonth()+1)) {
+    if ((born.getMonth()+1) > (now.getMonth()+1)) {
         age--
     }
-    else if (month == (now.getMonth()+1)){
-        if (date > (now.getDate())){
+    else if ((born.getMonth()+1) == (now.getMonth()+1)){
+        if (born.getDate() > (now.getDate()-1)){
             age --
         }
     }

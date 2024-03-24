@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <label>List of numbers:</label><br>
-    <input type = "text" id = "list"></input>
-    <button onclick = changeorder()>Change Order</button>
+<body> 
+    <label for="array">Array (separado por vírgulas):</label>
+    <input type="text" id="array">
+    <select id="order">
+        <option value="crescente">Crescente</option>
+        <option value="decrescente">Decrescente</option>
+    </select>
+    <button onclick="changeorder()">Ordenar</button>
     <div id = "result"></div>
     <script src = 'q10.js' ></script>
 </body>

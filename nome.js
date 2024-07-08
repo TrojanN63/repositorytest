@@ -1,0 +1,1 @@
+function exibir(){document.getElementById("exibição").innerHTML = `<b>${document.getElementById("nome").value}  ${document.getElementById("sobrenome").value}</b>`}

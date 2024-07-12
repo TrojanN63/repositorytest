@@ -6,11 +6,12 @@ function confirm(){
 
     if (nome.length == 0){document.getElementById("result").innerHTML = "Nome não preenchido."}
     else if (email.length == 0){document.getElementById("result").innerHTML = "Email não preenchido."}
-    else if (email.indexOf("@") = -1){document.getElementById("result").innerHTML = "email inválido."}
-    else if (email.indexOf(".") = -1){document.getElementById("result").innerHTML = "email inválido."}
+    else if (!email.includes("@")){document.getElementById("result").innerHTML = "email inválido."}
+    else if (!email.includes(".")){document.getElementById("result").innerHTML = "email inválido."}
     else if (senha.length == 0){document.getElementById("result").innerHTML = "Senha não preenchida."}
     else if (senha.length < 8){document.getElementById("result").innerHTML = "Senha precisa ter pelo menos 8 caractéres."}
     else if (senha !== senha2){document.getElementById("result").innerHTML = "Senha precisa ser igual à confirmação."}
+    else {document.getElementById("result").innerHTML = "cadastro completo... sua alma agora é minha..."}
     
 }
 

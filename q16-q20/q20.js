@@ -14,4 +14,3 @@ function confirm(){
     else {document.getElementById("result").innerHTML = "cadastro completo... sua alma agora é minha..."}
     
 }
-

@@ -13,10 +13,11 @@ fetch(url)
             const postElement = document.createElement('div');
             //userElement.classList.add('user');
             postElement.innerHTML = `
-                    <h2>${post.userId}</h2>
-                    <p>Id: ${post.id}</p>
+                    <h2>Anon: @${post.userId}</h2>
+                    <p>Post: #${post.id}</p>
                     <p>Title: ${post.title}</p>
                     <p>Body: ${post.body}</p>
+                    <p>______________________________________________________________________________________________________________________________________________________________________________________________________</p>
                 `;
             postsList.appendChild(postElement);
         });

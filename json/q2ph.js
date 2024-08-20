@@ -6,7 +6,7 @@ function show() {
     .catch(error => displayError(error));
 
     function displayComment(comments) {
-        const postsList = document.getElementById('posts-list');
+        const postsList = document.getElementById('comment-list');
         postsList.innerHTML = '';
         postid = document.getElementById("postID").value
         comments.forEach(comment => {
@@ -14,10 +14,11 @@ function show() {
                 const postElement = document.createElement('div');
                 postElement.innerHTML = `
                         <h2>Post ID: ${comment.postId}</h2>
-                        <h2>Comment ID: ${comment.id}</h2>
-                        <h2>Name: ${comment.postId}</h2>
-                        <h2>Email: ${comment.postId}</h2>
-                        <h2>Body: ${comment.postId}</h2>
+                        <h1>Comment ID: ${comment.id}</h1>
+                        <h1>Name: ${comment.name}</h1>
+                        <p>Email: ${comment.email}</p>
+                        <p>Body: ${comment.body}</p>
+                        <h1>------------</h1>
                         `;
                 postsList.appendChild(postElement);
             }
@@ -25,7 +26,7 @@ function show() {
     }
     
     function displayError(error) {
-        const postsList = document.getElementById('posts-list');
+        const postsList = document.getElementById('comment-list');
         postsList.innerHTML = `<div class="error">Ocorreu um erro: ${error.message}</div>`;
     }
 }

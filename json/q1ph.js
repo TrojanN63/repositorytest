@@ -1,25 +1,40 @@
-url = "https://jsonplaceholder.typicode.com/posts"
+urlposts = "https://jsonplaceholder.typicode.com/posts"
+urlusers = "https://jsonplaceholder.typicode.com/users"
 
-fetch(url)
+
+
+fetch(urlposts)
     .then(response => response.json())
-    .then(data => displayUsers(data))
+    .then(data => displayPosts(data))
     .catch(error => displayError(error));
 
-    function displayUsers(posts) {
+    function displayPosts(posts) {
         const postsList = document.getElementById('posts-list');
         postsList.innerHTML = '';
     
         posts.forEach(post => {
             const postElement = document.createElement('div');
-            //userElement.classList.add('user');
+            fetch(urlusers)
+                .then(response => response.json())
+                .then(data => displayUsers(data))
+                .catch(error => displayError(error));
+
+            function displayUsers(users){
+                users.forEach(user => {
+                    if (user.id == post.userId){
+                        username = user.name
+                    }
+                })
+                
             postElement.innerHTML = `
-                    <h2>Anon: @${post.userId}</h2>
-                    <p>Post: #${post.id}</p>
-                    <p>Title: ${post.title}</p>
-                    <p>Body: ${post.body}</p>
-                    <p>______________________________________________________________________________________________________________________________________________________________________________________________________</p>
-                `;
-            postsList.appendChild(postElement);
+            <h2>User: @${username}</h2>
+            <p>Post: #${post.id}</p>
+            <p>Title: ${post.title}</p>
+            <p>Body: ${post.body}</p>
+            <p>______________________________________________________________________________________________________________________________________________________________________________________________________</p>
+        `;
+    postsList.appendChild(postElement);
+            }
         });
     }
     

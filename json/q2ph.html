@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comment list</title>
     <style>
+        h2 {
+            color:white;
+        }
         p {
             color: white;
         }
@@ -15,8 +18,11 @@
     </style>
 </head>
 <body>
-    <input id = postID type = "number"></input>
-    <button onclick = show() >Show Comment List</button>
+    <h2>Posts: 
+    <select id = "posts" onchange="show()">
+        <option value = "">Select a post...</option>
+    </select>
+    </h2>
     <p id="comment-list"></p>
     <script src = q2ph.js ></script>
 </body>

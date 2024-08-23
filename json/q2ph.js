@@ -1,4 +1,18 @@
 url = "https://jsonplaceholder.typicode.com/comments"
+url_posts = "https://jsonplaceholder.typicode.com/posts"
+
+fetch(url_posts)
+  .then(response => response.json())
+  .then(posts => list_posts(posts));
+
+function list_posts(posts) {
+  let select = document.getElementById('posts');
+  for (let post of posts) {
+    let option = new Option(post.title, post.id);
+    select.options[select.options.length] = option;
+  }
+}
+
 function show() {
     fetch(url)
     .then(response => response.json())
@@ -8,7 +22,7 @@ function show() {
     function displayComment(comments) {
         const postsList = document.getElementById('comment-list');
         postsList.innerHTML = '';
-        postid = document.getElementById("postID").value
+        postid = document.getElementById("posts").value
         comments.forEach(comment => {
             if (comment.postId == postid){
                 const postElement = document.createElement('div');

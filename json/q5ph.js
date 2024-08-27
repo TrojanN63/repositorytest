@@ -1,7 +1,21 @@
-function show(){
-    user = document.getElementById("user").value
+url_users = "https://jsonplaceholder.typicode.com/users"
 
-    url = `https://jsonplaceholder.typicode.com/users/${user}/todos`
+fetch(url_users)
+  .then(response => response.json())
+  .then(users => list_users(users));
+
+function list_users(users) {
+  let select = document.getElementById('users');
+  for (let user of users) {
+    let option = new Option(user.name, user.id);
+    select.options[select.options.length] = option;
+  }
+}
+
+function show(){
+    userr = document.getElementById('users').value
+
+    url = `https://jsonplaceholder.typicode.com/users/${userr}/todos`
 
     fetch(url)
     .then(response => response.json())

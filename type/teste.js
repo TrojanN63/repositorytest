@@ -4,6 +4,12 @@ var Circulo = /** @class */ (function () {
         this.x = x;
         this.y = y;
     }
+    Circulo.prototype.getRaio = function () {
+        return this.raio;
+    };
+    Circulo.prototype.setRaio = function (r) {
+        this.raio = r;
+    };
     Circulo.prototype.exibir = function () {
         return "Raio: ".concat(this.raio, ", x: ").concat(this.x, ", y: ").concat(this.y);
     };
@@ -26,3 +32,6 @@ circulo2.mover(3, 2);
 circulo2.aumentar(6);
 console.log(circulo1.exibir());
 console.log(circulo2.exibir());
+console.log(circulo1.getRaio());
+circulo1.setRaio(100);
+console.log(circulo1.getRaio());

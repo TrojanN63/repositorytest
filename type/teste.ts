@@ -1,13 +1,21 @@
 class Circulo {
-    raio: number;
-    x: number;
-    y:number;
+    private raio: number;
+    private x: number;
+    private y:number;
 
     constructor(raio: number, x: number, y: number) {
         this.raio = raio;
         this.x = x;
         this.y = y;
     }
+
+    getRaio() : number {
+        return this.raio;
+    }
+    setRaio(r: number) : void {
+        this.raio = r;
+    }
+
     exibir() : string {
         return `Raio: ${this.raio}, x: ${this.x}, y: ${this.y}`;
     }
@@ -36,3 +44,7 @@ circulo2.aumentar(6)
 
 console.log(circulo1.exibir());
 console.log(circulo2.exibir());
+
+console.log(circulo1.getRaio());
+circulo1.setRaio(100);
+console.log(circulo1.getRaio());

@@ -13,7 +13,12 @@ class Circulo {
         return this.raio;
     }
     setRaio(r: number) : void {
-        this.raio = r;
+        if (r > 0){
+            this.raio = r;
+        }
+        else {
+            console.log("saporra nem faz sentido")
+        }
     }
 
     exibir() : string {
@@ -45,6 +50,6 @@ circulo2.aumentar(6)
 console.log(circulo1.exibir());
 console.log(circulo2.exibir());
 
-console.log(circulo1.getRaio());
-circulo1.setRaio(100);
-console.log(circulo1.getRaio());
+//console.log(circulo1.getRaio());
+//circulo1.setRaio(-666);
+//console.log(circulo1.getRaio());

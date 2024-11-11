@@ -8,7 +8,12 @@ var Circulo = /** @class */ (function () {
         return this.raio;
     };
     Circulo.prototype.setRaio = function (r) {
-        this.raio = r;
+        if (r > 0) {
+            this.raio = r;
+        }
+        else {
+            console.log("saporra nem faz sentido");
+        }
     };
     Circulo.prototype.exibir = function () {
         return "Raio: ".concat(this.raio, ", x: ").concat(this.x, ", y: ").concat(this.y);
@@ -33,5 +38,5 @@ circulo2.aumentar(6);
 console.log(circulo1.exibir());
 console.log(circulo2.exibir());
 console.log(circulo1.getRaio());
-circulo1.setRaio(100);
+circulo1.setRaio(-666);
 console.log(circulo1.getRaio());

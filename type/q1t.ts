@@ -46,16 +46,27 @@ let livro2 = new Livro("A Revolução dos Bixos","George Orwell",12.99)
 let livro3 = new Livro("Boa noite Punpun","Inio Asano",45.99)
 
 class Biblioteca {
-    private Livros : string;
+    livros : Livro[]
 
-    constructor(Livros: string){
-        this.Livros = Livros
+    constructor(livros: Livro[]) {
+        this.livros = livros
     }
 
-    Listar(){
-        for (let i = 0; i < this.Livros.split(";").length; i++) {
-            let livro = this.Livros.split(";")[i]
-            console.log((livro).descricao());
-          }
+    listar():void{
+        this.livros.forEach(livro => {
+            console.log(livro.descricao())
+        });
+    }
+    Adicionar(livro : Livro){
+        this.livros.push(livro)
     }
 }
+let lista_livros = [livro1,livro2,livro3]
+let biblio = new Biblioteca(lista_livros)
+console.log("biblioteca sem o quarto livro")
+biblio.listar()
+console.log("adicionando o livro")
+let livro4 = new Livro("Berserk", "Kentaro Miura", 65.99)
+biblio.Adicionar(livro4)
+console.log("biblioteca com o livro adicionado")
+biblio.listar()

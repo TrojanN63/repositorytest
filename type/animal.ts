@@ -25,6 +25,15 @@ class Cachorro extends Animal {
     }
 }
 
+class Gato extends Animal {
+    constructor(nome : string){
+        super(nome)
+    }
+    emitirSom(): void {
+        console.log("MIAU SEU MERDA")
+    }
+}
+
 let animal : Animal = new Animal('Ornitorrinco');
 animal.emitirSom()
 animal.mover(10)
@@ -32,4 +41,10 @@ animal.mover(10)
 let doggg = new Cachorro('doggy')
 doggg.emitirSom()
 doggg.mover(0.666666666666667)
-doggg.pegar("leie")
+doggg.pegar("leite")
+
+let animais : Animal[] = [new Animal("porra"), new Cachorro("filho da puta"), new Gato("paçoquinha")]
+animais.forEach(animal => {
+    console.log(animal.nome)
+    animal.emitirSom()
+})

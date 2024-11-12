@@ -38,10 +38,25 @@ var Cachorro = /** @class */ (function (_super) {
     };
     return Cachorro;
 }(Animal));
+var Gato = /** @class */ (function (_super) {
+    __extends(Gato, _super);
+    function Gato(nome) {
+        return _super.call(this, nome) || this;
+    }
+    Gato.prototype.emitirSom = function () {
+        console.log("MIAU SEU MERDA");
+    };
+    return Gato;
+}(Animal));
 var animal = new Animal('Ornitorrinco');
 animal.emitirSom();
 animal.mover(10);
 var doggg = new Cachorro('doggy');
 doggg.emitirSom();
 doggg.mover(0.666666666666667);
-doggg.pegar("leie");
+doggg.pegar("leite");
+var animais = [new Animal("porra"), new Cachorro("filho da puta"), new Gato("paçoquinha")];
+animais.forEach(function (animal) {
+    console.log(animal.nome);
+    animal.emitirSom();
+});

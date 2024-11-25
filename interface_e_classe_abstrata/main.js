@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var class_livro_1 = require("./class_livro");
+var class_revista_1 = require("./class_revista");
+var class_usuario_1 = require("./class_usuario");
+var class_biblioteca_1 = require("./class_biblioteca");
+var livro1 = new class_livro_1.Livro("O Senhor dos Anéis", 1954, "J.R.R. Tolkien", 1216);
+var revista1 = new class_revista_1.Revista("National Geographic", 2024, "NG Media", 150);
+var usuario1 = new class_usuario_1.Usuario("Maria Silva", 1);
+var biblioteca = new class_biblioteca_1.Biblioteca();
+biblioteca.adicionar_item(livro1);
+biblioteca.adicionar_item(revista1);
+biblioteca.registrar_usuario(usuario1);
+usuario1.emprestar_item(livro1);

@@ -1,6 +1,6 @@
-import { Livro } from "./class_livro";
-import { Revista } from "./class_revista";
-import { Usuario } from "./class_usuario";
+import { Livro } from "../class_livro";
+import { Revista } from "../class_revista";
+import { Usuario } from "../class_usuario";
 import { Biblioteca } from "./class_biblioteca";
 
 const livro1 = new Livro("O Senhor dos Anéis", 1954, "J.R.R. Tolkien", 1216);

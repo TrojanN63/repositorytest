@@ -15,19 +15,19 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Livro = void 0;
-var abstract_item_1 = require("./abstract_item");
-var Livro = /** @class */ (function (_super) {
-    __extends(Livro, _super);
-    function Livro(titulo, anoPublicado, autor, numero_paginas) {
+exports.Revista = void 0;
+var abstract_item_1 = require("../src/abstract_item");
+var Revista = /** @class */ (function (_super) {
+    __extends(Revista, _super);
+    function Revista(titulo, anoPublicado, editora, numeroEdicao) {
         var _this = _super.call(this, titulo, anoPublicado) || this;
-        _this.autor = autor;
-        _this.numero_paginas = numero_paginas;
+        _this.editora = editora;
+        _this.numeroEdicao = numeroEdicao;
         return _this;
     }
-    Livro.prototype.exibir_info = function () {
-        return "Livro: ".concat(this.titulo, ", Autor: ").concat(this.autor, ", Ano: ").concat(this.ano_publicado, ", P\u00E1ginas: ").concat(this.numero_paginas);
+    Revista.prototype.exibir_info = function () {
+        return "Revista: ".concat(this.titulo, ", Editora: ").concat(this.editora, ", Ano: ").concat(this.ano_publicado, ", Edi\u00E7\u00E3o: ").concat(this.numeroEdicao);
     };
-    return Livro;
+    return Revista;
 }(abstract_item_1.ItemBiblioteca));
-exports.Livro = Livro;
+exports.Revista = Revista;

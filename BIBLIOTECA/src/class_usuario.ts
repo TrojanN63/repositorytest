@@ -1,4 +1,4 @@
-import { ItemBiblioteca } from "./abstract_item";
+import { ItemBiblioteca } from "./abstract_item.js";
 
 export class Usuario{
     constructor(private _nome : string, private _id_user : number) {}

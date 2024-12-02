@@ -1,4 +1,4 @@
-import { ItemBiblioteca } from "./abstract_item";
+import { ItemBiblioteca } from "./abstract_item.js";
 
 export class Revista extends ItemBiblioteca{
     constructor(
